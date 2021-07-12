@@ -102,7 +102,7 @@ export default {
       let cost = 0;
       let sell = 0;
       // loop through the two json files and calculate the cost and the selling price
-      try {
+   
         itemList.forEach((item) => {
           rates.forEach((rate) => {
             if (item.code == rate["Product Code"]) {
@@ -117,18 +117,15 @@ export default {
               // Create an object that holds all the desired values
               enmptyArray.push({
                 "Product Code": item.code,
-                Description: item.description,
-                Quantity: item.quantity,
+                "Description": item.description,
+                "Quantity": item.quantity,
                 "Total Cost Price": cost,
                 "Total Sell Price": sell,
               });
             }
           });
         });
-      } catch (e) {
-        console.log(e);
-        enmptyArray = [];
-      }
+  
 
       // Push the newly created object to the main table that is going to be used to populate the form table
 
